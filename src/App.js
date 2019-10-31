@@ -35,8 +35,7 @@ class App extends Component {
   }
 
   shuffleArray(array) {
-    
-
+  
     // // While there remain elements to shuffle...
     // while (0 !== currentIndex) {
     //   // Pick a remaining element...
@@ -48,7 +47,6 @@ class App extends Component {
     //   array[currentIndex] = array[randomIndex];
     //   array[randomIndex] = temporaryValue;
     // }
-
     return array;
   }
 
