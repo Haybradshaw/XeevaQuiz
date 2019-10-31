@@ -17,7 +17,7 @@ var quizQuestions2 = [
         ]
     },
     {
-        question: "Which console would you prefer to play with friends?",
+        question: "Question2",
         answers: [
             {
                 type: "Microsoft",
