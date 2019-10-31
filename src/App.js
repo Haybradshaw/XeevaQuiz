@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import quizQuestions from './api/quizQuestions';
+import quizQuestions1 from './api/quizQuestions1';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import logo from './svg/logo.svg';
@@ -23,11 +23,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const shuffledAnswerOptions = quizQuestions.map(question =>
+    const shuffledAnswerOptions = quizQuestions1.map(question =>
       this.shuffleArray(question.answers)
     );
     this.setState({
-      question: quizQuestions[0].question,
+      question: quizQuestions1[0].question,
       answerOptions: shuffledAnswerOptions[0]
     });
   }
@@ -55,7 +55,7 @@ class App extends Component {
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
 
-    if (this.state.questionId < quizQuestions.length) {
+    if (this.state.questionId < quizQuestions1.length) {
       setTimeout(() => this.setNextQuestion(), 300);
     } else {
       setTimeout(() => this.setResults(this.getResults()), 300);
@@ -79,8 +79,8 @@ class App extends Component {
     this.setState({
       counter: counter,
       questionId: questionId,
-      question: quizQuestions[counter].question,
-      answerOptions: quizQuestions[counter].answers,
+      question: quizQuestions1[counter].question,
+      answerOptions: quizQuestions1[counter].answers,
       answer: ''
     });
   }
@@ -109,7 +109,7 @@ class App extends Component {
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
-        questionTotal={quizQuestions.length}
+        questionTotal={quizQuestions1.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
     );
